@@ -52,23 +52,43 @@ box-sizing: border-box;
 
   .color-black {
     background-color: black;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: inline-block;
   }
 
   .color-red {
     background-color: red;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: inline-block;
   }
 
   .color-blue {
     background-color: blue;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: inline-block;
   }
 
   .color-yellow {
     background-color: yellow;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: inline-block;
   }
 
 #color-palette div:hover {
-  height: 25px;
-  width: 25px;
+  height: 40px;
+  width: 40px;
   border: 6px solid rgb(87, 87, 87);
   box-sizing: border-box;
   cursor: pointer;
