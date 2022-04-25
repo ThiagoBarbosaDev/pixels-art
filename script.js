@@ -40,7 +40,7 @@ function clearBoard() {
   const clearButton = document.querySelector('#clear-board');
   const pixel = document.querySelectorAll('.pixel');
   clearButton.addEventListener('click', () => {
-    pixel.forEach(pixel => {
+    pixel.forEach((pixel) => {
       pixel.className = 'pixel';
     });
   });
