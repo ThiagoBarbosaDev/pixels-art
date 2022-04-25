@@ -3,6 +3,7 @@
 body {
   background: url(bgimg.jpg);
   background-size: cover;
+  font-family: VT323, monospace;
 
 
   
@@ -128,6 +129,23 @@ box-sizing: border-box;
   flex-wrap: nowrap;
 }
 
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
 
+.button {
+  height: fit-content;
+  width: fit-content;
+  background-color: #000;
+  border-radius: 15px;
+  cursor: pointer;
+}
 
+.button-text {
+  color: white;
+  padding: 10px;
+}
 

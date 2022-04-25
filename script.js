@@ -1,5 +1,5 @@
 const pixelBoard = document.querySelector('#pixel-board');
-const pixelL = document.querySelector('.pixel-board__linha');
+const pixelL = document.querySelector('#pixel-board').children;
 let selectedColor = document.querySelector('.selected');
 
 // Lógica de seleção de cores da paleta
@@ -24,16 +24,26 @@ colorSelector();
 // Lógica de Pintar
 function pixelPainter() {
   pixelBoard.addEventListener('click', (e) => {
-    // console.log(e.target);
-    // console.log(e.target.classList[1]);
-    // console.log(selectedColor.classList[1]);
     const selectedColorClass = selectedColor.classList[1];
-    console.log(e.target.classList);
+
     if (e.target.classList.length < 3 && e.target !== pixelBoard) {
       e.target.className = `${selectedColorClass} pixel`;
-      // e.target.classList.remove('pixel');
     }
   });
 }
 
 pixelPainter();
+
+// Lógica de limpar a tela
+
+function clearBoard() {
+  const clearButton = document.querySelector('#clear-board');
+  const pixel = document.querySelectorAll('.pixel');
+  clearButton.addEventListener('click', () => {
+    pixel.forEach(pixel => {
+      pixel.className = 'pixel';
+    });
+  });
+}
+
+clearBoard();
