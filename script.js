@@ -29,9 +29,9 @@ function pixelPainter() {
     // console.log(selectedColor.classList[1]);
     const selectedColorClass = selectedColor.classList[1];
     console.log(e.target.classList);
-    if (e.target.classList.length < 2 && e.target !== pixelBoard) {     console.log(e.target.classList);
-      e.target.className = selectedColorClass;     console.log(e.target.classList);
-      e.target.classList.remove('pixel');     console.log(e.target.classList);
+    if (e.target.classList.length < 3 && e.target !== pixelBoard) {
+      e.target.className = `${selectedColorClass} pixel`;
+      // e.target.classList.remove('pixel');
     }
   });
 }
