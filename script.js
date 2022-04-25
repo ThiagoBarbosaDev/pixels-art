@@ -1,8 +1,38 @@
-const pixelBoard = document.querySelector('#pixel-board');
-const pixelL = document.querySelector('#pixel-board').children;
 let selectedColor = document.querySelector('.selected');
+const boardWrapper = document.getElementsByTagName('main')[0];
 
-// Lógica de seleção de cores da paleta
+// CreatePixels
+function createPixels(numOfPx, appendTarget) {
+  for (let i = 0; i < numOfPx; i += 1) {
+    const newPx = document.createElement('div');
+    newPx.className = 'pixel';
+    appendTarget.appendChild(newPx);
+  }
+}
+
+// createlines
+function createLines(numOfLines, appendTarget) {
+  for (let i = 0; i < numOfLines; i += 1) {
+    const newLine = document.createElement('div');
+    newLine.className = 'pixel-board__linha';
+    createPixels(numOfLines, newLine);
+    appendTarget.appendChild(newLine);
+  }
+}
+
+// Createboard
+function createBoard(boardSize) {
+  const board = document.createElement('div');
+  board.id = 'pixel-board';
+  createLines(boardSize, board);
+  boardWrapper.appendChild(board);
+}
+
+createBoard(5);
+
+const pixelBoard = document.querySelector('#pixel-board');
+
+// // Lógica de seleção de cores da paleta
 function colorSelector() {
   const colorPalette = document.querySelector('#color-palette');
 
@@ -47,3 +77,4 @@ function clearBoard() {
 }
 
 clearBoard();
+
