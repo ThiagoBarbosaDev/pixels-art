@@ -5,10 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Pixel Art</title>
-    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
@@ -21,9 +19,9 @@
 
       <div id="color-palette">
         <div class="color color-black selected"></div>
-        <div class="color color-red"></div>
-        <div class="color color-blue"></div>
-        <div class="color color-yellow"></div>
+        <div class="color color1"></div>
+        <div class="color color2"></div>
+        <div class="color color3"></div>
       </div>
       <div id="button-container">
         <div id="eraser-wrapper">
@@ -33,55 +31,18 @@
         </div>
 
         <div id="size-wrapper">
-          <label for="size-button">Board Size</label>
+          <label>Board Size</label>
           <input 
-            inputmode="number" 
             class="button" 
-            min="5" 
+            min="1" 
             max="50" 
             placeholder="5-50" 
-            value='5' 
-            id="board-size"></div>
+
+            id="board-size"
+            type="number"></div>
           <button id="generate-board">VQV</div>
         </div> 
       </div>
-      <!-- <div id="pixel-board">
-        <div class="pixel-board__linha">
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-        </div>
-        <div class="pixel-board__linha">
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-        </div>
-        <div class="pixel-board__linha">
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-        </div>
-        <div class="pixel-board__linha">
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-        </div>
-        <div class="pixel-board__linha">
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-          <div class="pixel"></div>
-        </div>
-      </div> -->
     </main>
 
     <script src="script.js"></script>

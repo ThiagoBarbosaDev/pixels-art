@@ -64,7 +64,7 @@ h1 {
   display: inline-block;
 }
 
-.color-red {
+.color1 {
   background-color: red;
   height: 40px;
   width: 40px;
@@ -73,7 +73,7 @@ h1 {
   display: inline-block;
 }
 
-.color-blue {
+.color2 {
   background-color: blue;
   height: 40px;
   width: 40px;
@@ -82,7 +82,7 @@ h1 {
   display: inline-block;
 }
 
-.color-yellow {
+.color3 {
   background-color: yellow;
   height: 40px;
   width: 40px;
