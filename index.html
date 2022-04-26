@@ -16,7 +16,7 @@
     />
   </head>
   <body>
-    <main>
+    <main id="board-wrapper">
       <h1 id="title">Paleta de Cores</h1>
 
       <div id="color-palette">
@@ -33,8 +33,17 @@
         </div>
 
         <div id="size-wrapper">
-          <div class="button"><p class="button-text">SELECT SIZE</p></div>
-        </div>
+          <label for="size-button">Board Size</label>
+          <input 
+            inputmode="number" 
+            class="button" 
+            min="5" 
+            max="50" 
+            placeholder="5-50" 
+            value='5' 
+            id="board-size"></div>
+          <button id="generate-board">VQV</div>
+        </div> 
       </div>
       <!-- <div id="pixel-board">
         <div class="pixel-board__linha">

@@ -143,3 +143,24 @@ h1 {
   color: white;
   padding: 10px;
 }
+
+#size-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#board-size{
+  height: 30px;
+  width: 59px;
+  color: white;
+  text-align: center;
+}
+
+#generate-board {
+  height: 36px;
+  background-color: rgb(70, 64, 64);
+  color: white;
+  border-radius: 5px;
+  margin: auto 0px;
+cursor: pointer;
+}

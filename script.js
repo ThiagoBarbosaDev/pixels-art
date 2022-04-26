@@ -1,5 +1,5 @@
 let selectedColor = document.querySelector('.selected');
-const boardWrapper = document.getElementsByTagName('main')[0];
+const boardWrapper = document.querySelector('#board-wrapper');
 
 // CreatePixels
 function createPixels(numOfPx, appendTarget) {
@@ -30,9 +30,7 @@ function createBoard(boardSize) {
 
 createBoard(5);
 
-const pixelBoard = document.querySelector('#pixel-board');
-
-// // Lógica de seleção de cores da paleta
+// Lógica de seleção de cores da paleta
 function colorSelector() {
   const colorPalette = document.querySelector('#color-palette');
 
@@ -49,10 +47,9 @@ function colorSelector() {
   });
 }
 
-colorSelector();
-
 // Lógica de Pintar
 function pixelPainter() {
+  const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.addEventListener('click', (e) => {
     const selectedColorClass = selectedColor.classList[1];
 
@@ -62,10 +59,7 @@ function pixelPainter() {
   });
 }
 
-pixelPainter();
-
 // Lógica de limpar a tela
-
 function clearBoard() {
   const clearButton = document.querySelector('#clear-board');
   const pixel = document.querySelectorAll('.pixel');
@@ -76,5 +70,36 @@ function clearBoard() {
   });
 }
 
-clearBoard();
+function generateBoardHandler() {
+  const boardSizeInput = document.querySelector('#board-size');
+  const pixelBoard = document.querySelector('#pixel-board');
+console.log(boardSizeInput)
+console.log(boardSizeInput.value)
+console.log(typeof boardSizeInput.value)
+  if (parseInt(boardSizeInput.value, 10) < 5) {
+    boardWrapper.removeChild(pixelBoard);
+    createBoard(5);
+  } else if (parseInt(boardSizeInput.value, 10) > 50) {
+    boardWrapper.removeChild(pixelBoard);
+    createBoard(50);
+  } else if (Number.isNaN(parseInt(boardSizeInput.value, 10))) {
+    window.alert('Board Inválido!');
+  } else {
+    boardWrapper.removeChild(pixelBoard);
+    createBoard(boardSizeInput.value);
+  }
+}
 
+function generateBoard() {
+  const generateBoardButton = document.querySelector('#generate-board');
+  generateBoardButton.addEventListener('click', () => {
+    generateBoardHandler();
+    pixelPainter();
+    clearBoard();
+  });
+}
+
+colorSelector();
+clearBoard();
+generateBoard();
+pixelPainter();
