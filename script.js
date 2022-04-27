@@ -1,22 +1,25 @@
 let selectedColor = document.querySelector('.selected');
 const boardWrapper = document.querySelector('#board-wrapper');
 
-// function randomizeRGB() {
-//   return Math.floor(Math.random() * 255) + 1;
-// }
+function randomizeRGB() {
+  return Math.floor(Math.random() * 255) + 1;
+}
 
-// // RandomizePalette
-// function RandomizePalette() {
-//   const paleta1 = document.querySelector('.color-red');
-//   const paleta2 = document.querySelector('.color-blue');
-//   const paleta3 = document.querySelector('.color-yellow');
+// RandomizePalette
+function RandomizePalette() {
+  const paleta0 = document.querySelector('.color0');
+  const paleta1 = document.querySelector('.color1');
+  const paleta2 = document.querySelector('.color2');
+  const paleta3 = document.querySelector('.color3');
 
-//   paleta1.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
-//   paleta2.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
-//   paleta3.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
-// }
 
-// RandomizePalette();
+  paleta0.style.backgroundColor = 'rgb(0, 0, 0)';
+  paleta1.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
+  paleta2.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
+  paleta3.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
+}
+
+RandomizePalette();
 
 // CreatePixels
 function createPixels(numOfPx, appendTarget) {
@@ -68,10 +71,11 @@ function colorSelector() {
 function pixelPainter() {
   const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.addEventListener('click', (e) => {
-    const selectedColorClass = selectedColor.classList[1];
+    // const selectedColorClass = selectedColor.classList[1];
+    const selectedElement = document.querySelector('.selected');
 
     if (e.target.classList.length < 3 && e.target !== pixelBoard) {
-      e.target.className = `${selectedColorClass} pixel`;
+      e.target.style.backgroundColor = selectedElement.style.backgroundColor;
     }
   });
 }
@@ -82,7 +86,8 @@ function clearBoard() {
   const pixel = document.querySelectorAll('.pixel');
   clearButton.addEventListener('click', () => {
     pixel.forEach((pixel) => {
-      pixel.className = 'pixel';
+      // pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'rgb(255, 255, 255)';
     });
   });
 }
