@@ -5,13 +5,11 @@ function randomizeRGB() {
   return Math.floor(Math.random() * 255) + 1;
 }
 
-// RandomizePalette
 function RandomizePalette() {
   const paleta0 = document.querySelector('.color0');
   const paleta1 = document.querySelector('.color1');
   const paleta2 = document.querySelector('.color2');
   const paleta3 = document.querySelector('.color3');
-
 
   paleta0.style.backgroundColor = 'rgb(0, 0, 0)';
   paleta1.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
@@ -21,7 +19,6 @@ function RandomizePalette() {
 
 RandomizePalette();
 
-// CreatePixels
 function createPixels(numOfPx, appendTarget) {
   for (let i = 0; i < numOfPx; i += 1) {
     const newPx = document.createElement('div');
@@ -30,7 +27,6 @@ function createPixels(numOfPx, appendTarget) {
   }
 }
 
-// createlines
 function createLines(numOfLines, appendTarget) {
   for (let i = 0; i < numOfLines; i += 1) {
     const newLine = document.createElement('div');
@@ -40,7 +36,6 @@ function createLines(numOfLines, appendTarget) {
   }
 }
 
-// Createboard
 function createBoard(boardSize) {
   const board = document.createElement('div');
   board.id = 'pixel-board';
@@ -50,28 +45,21 @@ function createBoard(boardSize) {
 
 createBoard(5);
 
-// Lógica de seleção de cores da paleta
 function colorSelector() {
   const colorPalette = document.querySelector('#color-palette');
 
   colorPalette.addEventListener('click', (e) => {
-    // Seleciona cor
     if (e.target.classList.length <= 2 && e.target !== colorPalette) {
-      // Remove classe "selected" de quem estiver na variável selectedColor
       selectedColor.classList.remove('selected');
-      // Adiciona classe "selected" para a div da paleta clicada
       e.target.classList.add('selected');
-      // Adiciona a div com a classe selected para a variavel selectedColor
       selectedColor = document.querySelector('.selected');
     }
   });
 }
 
-// Lógica de Pintar
 function pixelPainter() {
   const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.addEventListener('click', (e) => {
-    // const selectedColorClass = selectedColor.classList[1];
     const selectedElement = document.querySelector('.selected');
 
     if (e.target.classList.length < 3 && e.target !== pixelBoard) {
@@ -80,14 +68,13 @@ function pixelPainter() {
   });
 }
 
-// Lógica de limpar a tela
 function clearBoard() {
   const clearButton = document.querySelector('#clear-board');
-  const pixel = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   clearButton.addEventListener('click', () => {
-    pixel.forEach((pixel) => {
-      // pixel.className = 'pixel';
-      pixel.style.backgroundColor = 'rgb(255, 255, 255)';
+    pixels.forEach((child) => {
+      const elemento = child;
+      elemento.style.backgroundColor = 'rgb(255, 255, 255)';
     });
   });
 }
@@ -95,9 +82,6 @@ function clearBoard() {
 function generateBoardHandler() {
   const boardSizeInput = document.querySelector('#board-size');
   const pixelBoard = document.querySelector('#pixel-board');
-  console.log(boardSizeInput);
-  console.log(boardSizeInput.value);
-  console.log(typeof boardSizeInput.value);
   if (parseInt(boardSizeInput.value, 10) < 5) {
     boardWrapper.removeChild(pixelBoard);
     createBoard(5);
